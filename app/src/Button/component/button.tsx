@@ -22,7 +22,7 @@ const Button = (baseProps: ButtonProps, ref: any) => {
     onClick?.(event);
   }
 
-  const iconNode = loading && icon ? icon :  ( loading ? <Loading style={{fontSize:14}} /> : null );
+  const iconNode = loading ? <Loading style={{fontSize:14}} /> : icon;
 
   const innerContent: ReactNode = (
     <>
