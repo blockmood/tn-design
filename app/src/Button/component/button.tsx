@@ -2,6 +2,7 @@ import React, { forwardRef, MouseEventHandler, ReactNode } from 'react';
 import { ButtonProps } from '../type';
 import '../style/index';
 import { useClassNames } from '../hooks'
+import { Loading } from '@tn-design/Loading';
 
 const Button = (baseProps: ButtonProps, ref: any) => {
   const { type = 'default', children, onClick, className, style, disabled, loading, icon } = baseProps
@@ -21,7 +22,7 @@ const Button = (baseProps: ButtonProps, ref: any) => {
     onClick?.(event);
   }
 
-  const iconNode = loading ? <span>loading...</span> : icon;
+  const iconNode = loading && icon ? icon :  ( loading ? <Loading style={{fontSize:14}} /> : null );
 
   const innerContent: ReactNode = (
     <>

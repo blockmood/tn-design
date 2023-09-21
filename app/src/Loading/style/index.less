@@ -1,0 +1,22 @@
+@import url(../../Style/base.less);
+
+@loading-prefix-cls: ~'@{prefix}-loading';
+
+@keyframes mx-route {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+};
+
+
+.@{loading-prefix-cls}{
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  animation: mx-route 1s linear infinite;
+}

@@ -1,7 +1,7 @@
 import { CSSProperties, ReactNode, MouseEvent, MouseEventHandler } from "react";
 
 export interface ButtonProps {
-  type?: 'primary' | 'brand' | 'default';
+  type?: 'primary' | 'outline' | 'default';
   disabled?: boolean;
   style?: CSSProperties;
   className?:string;

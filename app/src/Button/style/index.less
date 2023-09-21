@@ -1,6 +1,6 @@
 @import url(../../Style/base.less);
 @import url(../style/cssVariable.less);
-@import url(../../Style/token.less);
+@import url(./token.less);
 
 @btn-prefix-cls: ~'@{prefix}-btn';
 
@@ -36,6 +36,14 @@
   background: transparent;
   border: transparent;
 
+  > svg + span {
+    margin-left: 8px;
+  }
+
+  > span + span {
+    margin-left: 8px;
+  }
+
   &-loading{
     cursor: default;
     position: relative;
@@ -58,4 +66,4 @@
 
 .btn-type(default);
 .btn-type(primary);
-.btn-type(brand);
+.btn-type(outline);
