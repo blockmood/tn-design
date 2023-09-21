@@ -1,0 +1,13 @@
+{
+  "name": "tn-design",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "pnpm --filter @tn-design start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
