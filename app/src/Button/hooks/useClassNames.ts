@@ -7,13 +7,12 @@ interface getClassNamesProps {
   type: ButtonProps['type'];
   disabled: ButtonProps['disabled'];
   className: ButtonProps['className'];
-  loading: ButtonProps['loading']
+  loading: ButtonProps['loading'];
+  prefixCls: string;
 }
 
 export const useClassNames = (props: getClassNamesProps) => {
-  const { type, disabled, className, loading } = props;
-  //这个地方从全局取  未来可以改
-  const prefixCls = 'tn-btn';
+  const { type, disabled, className, loading, prefixCls } = props;
 
   return useMemo(() => {
     return {

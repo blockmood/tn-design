@@ -1,19 +1,18 @@
 @import url(../../Style/base.less);
 @import url(../style/cssVariable.less);
-@import url(./token.less);
 
 @btn-prefix-cls: ~'@{prefix}-btn';
 
 .btn-type(@type){
   .@{btn-prefix-cls}-@{type}:not(.@{btn-prefix-cls}-disabled){
-    background-color: ~'@{btn-@{type}-color-bg}';
-    color: ~'@{btn-@{type}-color-text}';
-    border: 1px solid ~'@{btn-@{type}-color-border}';
+    background-color: ~'var(--btn-@{type}-color-bg)';
+    color: ~'var(--btn-@{type}-color-text)';
+    border: 1px solid ~'var(--btn-@{type}-color-border)';
   }
   .@{btn-prefix-cls}-@{type}.@{btn-prefix-cls}-disabled{
-    background-color: ~'@{btn-@{type}-color-bg-disabled}';
-    color: ~'@{btn-@{type}-color-text-disabled}';
-    border: 1px solid~ '@{btn-@{type}-color-border-disabled}';
+    background-color: ~'var(--btn-@{type}-color-bg-disabled)';
+    color: ~'var(--btn-@{type}-color-text-disabled)';
+    border: 1px solid ~'var(--btn-@{type}-color-border-disabled)';
     cursor: not-allowed;
   }
 }
@@ -22,7 +21,7 @@
 .@{btn-prefix-cls} {
   display: inline-flex;
   position: relative;
-  height: @btn-height;
+  height: var(--btn-height);
   align-items: center;
   justify-content: center;
   outline: none;
@@ -30,8 +29,8 @@
   user-select: none;
   cursor: pointer;
   white-space: nowrap;
-  padding: @btn-padding;
-  border-radius: @btn-radius;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
   box-sizing: border-box;
   background: transparent;
   border: transparent;

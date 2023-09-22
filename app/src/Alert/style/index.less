@@ -1,0 +1,33 @@
+@import url(../../Style/base.less);
+@import url(./cssVariable.less);
+
+@alert-prefix-cls: ~'@{prefix}-alert';
+
+.alert-type(@type){
+  .@{alert-prefix-cls}-@{type}{
+    padding: ~'var(--alert-@{type}-padding)';
+    color: ~'var(--alert-@{type}-text-color)';
+    background-color: ~'var(--alert-@{type}-bg-color)';
+  };
+};
+
+.@{alert-prefix-cls}{
+  display: flex;
+  align-items: center;
+  padding: var(--alert-padding);
+  border-radius: var(--alert-border-radius);
+
+  &-left{
+    display: flex;
+    align-items: center;
+  }
+
+  &-right{
+    margin-left: 15px;
+  }
+}
+
+
+.alert-type(info);
+.alert-type(warning);
+.alert-type(error);

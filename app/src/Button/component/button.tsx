@@ -1,13 +1,17 @@
-import React, { forwardRef, MouseEventHandler, ReactNode } from 'react';
+import React, { forwardRef, MouseEventHandler, ReactNode, useContext } from 'react';
 import { ButtonProps } from '../type';
 import '../style/index';
 import { useClassNames } from '../hooks'
 import { Loading } from '@tn-design/Loading';
+import { ConfigContent } from '@tn-design/ConfigProvider/configProvider';
+
 
 const Button = (baseProps: ButtonProps, ref: any) => {
+  const { getPrefixCls  } = useContext(ConfigContent);
   const { type = 'default', children, onClick, className, style, disabled, loading, icon } = baseProps
 
   const { wrapperCls } = useClassNames({
+    prefixCls:getPrefixCls('btn'),
     type:type,
     className: className,
     disabled:disabled,
